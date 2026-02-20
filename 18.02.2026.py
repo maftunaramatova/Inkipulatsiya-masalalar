@@ -75,13 +75,53 @@
 # print(user.parolni_tekshir("yangiParoli"))
 
 ##3-masala:
-# class Talaba:
-#     def __init__(self,ism,fan):
-#         self.__ism = ism
-#         self.__fan = fan
-#         self.__baholar = ()
-#
-#     def
+class Talaba:
+    def __init__(self,ism,fan):
+        self.__ism = ism
+        self.__fan = fan
+        self.__baholar = []
+
+    def get_ism(self):
+        return self.__ism
+
+    def get_fan(self):
+        return self.__fan
+
+    def baho_qosh(self,baho):
+            if not( 0 <= baho <= 100):
+                print("Baho 0 va 100 oralig'ida bo'lishi kerak ")
+                return
+            else:
+                self.__baholar.append(baho)
+
+    def get_baholar(self):
+        return self.__baholar.copy()
+
+    def ortacha_baho(self):
+        if not self.__baholar:
+            print("Hali baholar yo'q!")
+            return None
+        else:
+            return round(sum(self.__baholar)/len(self.__baholar), 2)
+
+talaba = Talaba("Nodira","Matematika")
+talaba.baho_qosh(85)
+talaba.baho_qosh(92)
+talaba.baho_qosh(78)
+talaba.baho_qosh(150)
+print(talaba.get_baholar())
+print(talaba.ortacha_baho())
+
+baholar = talaba.get_baholar()
+baholar.append(999)
+print(talaba.get_baholar())
+
+
+##4-Masala:
+
+
+
+
 
 
 
